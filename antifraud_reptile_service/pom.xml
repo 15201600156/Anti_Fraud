@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>anti_fraud</artifactId>
+        <groupId>com.study.anti_fraud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <artifactId>antifraud_reptile_service</artifactId>
+    <name>antifraud_reptile_service</name>
+    <description>反诈爬虫服务</description>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <webmagic-selenium.version>0.7.1</webmagic-selenium.version>
+        <jsoup.version>1.13.1</jsoup.version>
+        <htmlunit.version>2.26</htmlunit.version>
+        <JsoupXpath.version>2.4.3</JsoupXpath.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.study.anti_fraud</groupId>
+            <artifactId>antifraud_common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--爬虫-->
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <artifactId>webmagic-selenium</artifactId>
+            <version>${webmagic-selenium.version}</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.jsoup</groupId>-->
+            <!--<artifactId>jsoup</artifactId>-->
+            <!--<version>${jsoup.version}</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>${htmlunit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.wanghaomiao</groupId>
+            <artifactId>JsoupXpath</artifactId>
+            <version>${JsoupXpath.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <!--通过spring data 操作Es-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
