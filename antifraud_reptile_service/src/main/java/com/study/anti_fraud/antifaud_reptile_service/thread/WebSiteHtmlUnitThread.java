@@ -10,6 +10,7 @@ import com.study.anti_fraud.antifaud_reptile_service.untils.SnowflakeComponentUt
 import com.study.anti_fraud.antifaud_reptile_service.untils.SpringContextUtil;
 import com.study.anti_fraud.antifaud_reptile_service.untils.XPathUtil;
 import com.study.anti_fraud.antifraud_common.constants.KafkaConstant;
+import com.study.anti_fraud.antifraud_common.untils.PhantomTools;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.seimicrawler.xpath.JXDocument;
@@ -73,6 +74,8 @@ public class WebSiteHtmlUnitThread implements Runnable {
             });
             WebSiteInfoRepository webSiteInfoRepository = SpringContextUtil.getBean(WebSiteInfoRepository.class);
             webSiteInfoRepository.saveAll(webSiteInfos);
+
+            PhantomTools.printUrlScreen2jpg(webSiteUrl);
         } catch (Exception e) {
             e.printStackTrace();
             KafkaProducer kafkaProducer = SpringContextUtil.getBean(KafkaProducer.class);

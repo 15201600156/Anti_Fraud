@@ -6,6 +6,7 @@ import com.study.anti_fraud.antifaud_reptile_service.entity.WebSiteInfo;
 import com.study.anti_fraud.antifaud_reptile_service.repository.WebSiteInfoRepository;
 import com.study.anti_fraud.antifaud_reptile_service.untils.SnowflakeComponentUtil;
 import com.study.anti_fraud.antifaud_reptile_service.untils.SpringContextUtil;
+import com.study.anti_fraud.antifraud_common.untils.PhantomTools;
 import com.study.anti_fraud.antifraud_common.untils.WebSiteUtil;
 import com.study.anti_fraud.antifaud_reptile_service.untils.XPathUtil;
 import com.study.anti_fraud.antifraud_common.constants.KafkaConstant;
@@ -75,6 +76,7 @@ public class WebSiteJsoupThread implements Runnable {
                     });
                     WebSiteInfoRepository webSiteInfoRepository = SpringContextUtil.getBean(WebSiteInfoRepository.class);
                     webSiteInfoRepository.saveAll(webSiteInfos);
+                    PhantomTools.printUrlScreen2jpg(webSiteUrl);
                 } else {
                     log.info("采用Jsoup没有抓取到，放入消息队列当中，采用HTMLUnit进行抓取");
                     KafkaProducer kafkaProducer = SpringContextUtil.getBean(KafkaProducer.class);

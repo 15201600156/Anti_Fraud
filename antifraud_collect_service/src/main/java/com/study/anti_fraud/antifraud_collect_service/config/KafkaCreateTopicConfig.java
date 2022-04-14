@@ -17,7 +17,7 @@ public class KafkaCreateTopicConfig {
         //当broker个数为1个时会创建topic失败，
         //提示：replication factor: 2 larger than available brokers: 1
         //只有在集群中才能使用kafka的备份功能
-        return new NewTopic(KafkaConstant.WEBSITE_WEBMAGIC_TOPIC, 10, (short) 1);
+        return new NewTopic(KafkaConstant.WEBSITE_JSOUP_TOPIC, 10, (short) 1);
     }
 
 }

@@ -9,7 +9,7 @@ import us.codecraft.webmagic.downloader.selenium.SeleniumDownloader;
 
 public class WebSiteWebmagicThread implements Runnable {
 
-    private static final String chromeDriverPath = "E:\\organizational_process_assets\\reptile\\chromedriver_win32\\chromedriver.exe";
+    private static final String chromeDriverPath = "E:\\organizational_process_assets\\Anti_Fraud\\assert\\chromedriver_win32\\chromedriver.exe";
     /**
      * When an object implementing interface <code>Runnable</code> is used
      * to create a thread, starting the thread causes the object's
