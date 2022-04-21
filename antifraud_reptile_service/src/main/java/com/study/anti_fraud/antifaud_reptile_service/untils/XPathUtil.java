@@ -2,6 +2,7 @@ package com.study.anti_fraud.antifaud_reptile_service.untils;
 
 import org.seimicrawler.xpath.JXDocument;
 import org.seimicrawler.xpath.JXNode;
+import us.codecraft.webmagic.selector.Html;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class XPathUtil {
 
     /**
      * 获取当前HTML节点下的标签的文本内容（仅限xpath匹配的标签的文本值，不包含标签内套标签的文本值）
+     *
      * @param jxNode
      * @param regex
      * @return
@@ -43,8 +45,12 @@ public class XPathUtil {
     }
 
 
-    public static List<JXNode>  getCurrentElementsHtmlByRegex(JXDocument jxDocument, String regex) {
+    public static List<JXNode> getCurrentElementsHtmlByRegex(JXDocument jxDocument, String regex) {
         return jxDocument.selN(regex);
     }
 
+
+    public static String getCurrentElementTextByRegex(Html html, String regex) {
+        return new Html(html.xpath(regex).get()).getDocument().text();
+    }
 }

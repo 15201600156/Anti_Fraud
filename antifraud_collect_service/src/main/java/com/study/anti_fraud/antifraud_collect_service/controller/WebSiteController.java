@@ -26,7 +26,7 @@ public class WebSiteController {
 
     @GetMapping("collectWebSite")
     public Result collectWebSite(String webSiteUrl) {
-       kafkaProducer.send(KafkaConstant.WEBSITE_JSOUP_TOPIC, webSiteUrl);
+       kafkaProducer.send(KafkaConstant.WEBSITE_WEBMAGIC_TOPIC, webSiteUrl);
         return ResultBuilder.success();
     }
 
