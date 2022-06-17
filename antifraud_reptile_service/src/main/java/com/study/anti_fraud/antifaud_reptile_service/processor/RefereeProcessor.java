@@ -36,7 +36,7 @@ public class RefereeProcessor implements PageProcessor {
 //        JXDocument document = JXDocument.create(page.getHtml().getDocument());
 //        String str = document.selNOne("//*[@id=\"mohe-mobilecheck\"]/div/div[1]/table/tbody/tr/td[2]/div[2]").asElement().text();
 
-        String currentElementTextByRegex = XPathUtil.getCurrentElementTextByRegex(page.getHtml(), "//*[@id=\"mohe-mobilecheck\"]/div/div[1]/table/tbody/tr/td[2]/div[2]");
+        String currentElementTextByRegex = XPathUtil.getCurrentElementTextByRegex(page.getHtml(), "//*[@id=\"mohe-mobilecheck\"]/div/div[1]/table/tbody/tr/td[2]/div[2]/allText()");
         System.out.println(currentElementTextByRegex);
 //        List<Selectable> nodes = page.getHtml().xpath("//*[@class=\"result c-container xpath-log new-pmd\"]").nodes();
 //

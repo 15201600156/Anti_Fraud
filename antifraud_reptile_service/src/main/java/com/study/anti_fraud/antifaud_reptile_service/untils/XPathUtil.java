@@ -49,8 +49,14 @@ public class XPathUtil {
         return jxDocument.selN(regex);
     }
 
-
+    /**
+     * /allText()
+     * @param html
+     * @param regex
+     * @return
+     */
     public static String getCurrentElementTextByRegex(Html html, String regex) {
+
         return new Html(html.xpath(regex).get()).getDocument().text();
     }
 }

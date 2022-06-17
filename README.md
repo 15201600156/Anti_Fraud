@@ -58,3 +58,8 @@ html2canvas介绍
 不支持Flash
 不支持古代浏览器和IE，如果你想确认是否支持某个浏览器，可以用它访问 http://deerface.sinaapp.com/ 试试 :)
      由于我的使用场景很简单,记录一下异常信息，并且异常页面也是由自己定义的，那么html2canvas 就足够使用了。
+     
+     
+Xpath使用时候获取标签下的所有文本内容
+：/allText()
+在原有的Xpath表达式后添加/allText() 就可以获取到所有的文本
